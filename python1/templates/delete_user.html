@@ -1,0 +1,28 @@
+<!-- delete_user.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete User</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='delete_user_styles.css') }}">
+</head>
+<body>
+    <h1>Delete User</h1>
+    
+    <form action="/guru/delete_user" method="post">
+        <label for="username_to_delete">Username to Delete:</label>
+        <input type="text" id="username_to_delete" name="username_to_delete" required>
+        <button type="submit">Delete User</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <!-- Add a link to go back to the Guru Dashboard -->
+    <a href="/guru/dashboard">Back to Guru Dashboard</a>
+</body>
+</html>
+
+<!-- <a> adalah tag HTML yang digunakan untuk membuat tautan (hyperlink) ke halaman web lain, file, alamat email, atau lokasi tertentu dalam halaman web yang sama. Nama "a" dalam <a> adalah singkatan dari "anchor" (pengikat), karena tag ini awalnya digunakan untuk menautkan atau mengikat sebuah teks dengan lokasi tertentu dalam sebuah dokumen.-->
